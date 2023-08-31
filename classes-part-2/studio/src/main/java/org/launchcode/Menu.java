@@ -1,7 +1,7 @@
 package org.launchcode;
-
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
+
 
 public class Menu {
     private Date lastUpdated;
@@ -26,6 +26,21 @@ public class Menu {
 
     public ArrayList<MenuItem> getItems() {
         return items;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "lastUpdated=" + lastUpdated +
+                ", items=" + items +
+                '}';
+    }
+    public void removeItem(MenuItem newItem){
+        this.items.remove(newItem);
+    }
+    public void addItem(MenuItem newItem){
+        this.items.add(newItem);
+        this.lastUpdated = new Date();
     }
 }
 
